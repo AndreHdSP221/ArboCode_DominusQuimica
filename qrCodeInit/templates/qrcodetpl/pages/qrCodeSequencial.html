@@ -1,0 +1,29 @@
+{% extends "global/html/basetemplate.html" %}
+{% load static %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'qrcodeinit/css/styles.css' %}">
+{% endblock style %}
+
+{% block title %}Gerador QRs{% endblock title %}
+
+<body>
+  <header>
+    <div class="header-container">
+      {% block header %}ArboCode - Dominus Química{% endblock header %}
+    </div>
+  </header>
+
+  <main>
+    {% block content %}
+      <section class="form-section">
+        {% include "qrcodetpl/partials/qrcode_main.html" %}
+      </section>
+    {% endblock content %}
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Dominus Química • Arbomonitor</p>
+  </footer>
+</body>
+</html>
