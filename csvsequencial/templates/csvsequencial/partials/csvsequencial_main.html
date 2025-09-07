@@ -1,0 +1,24 @@
+<form method="post">
+    {% csrf_token %}
+    <div>
+        {{ form.codigo_base.label_tag }}
+        {{ form.codigo_base }}
+    </div>
+
+    <div>
+        {{ form.caminho.label_tag }}
+        {{ form.caminho }}
+    </div>
+
+    <div>
+        {{ form.quantidadeInicial.label_tag }}
+        {{ form.quantidadeInicial }}
+    </div>
+
+    <div>
+        {{ form.quantidadeFinal.label_tag }}
+        {{ form.quantidadeFinal }}
+    </div>
+
+    <button type="submit">Gerar CSV</button>
+</form>

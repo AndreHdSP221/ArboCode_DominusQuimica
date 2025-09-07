@@ -1,0 +1,38 @@
+{% extends "global/html/basetemplate.html" %}
+{% load static %}
+
+{% comment %}
+Este bloco carrega o CSS específico para esta página.
+A tag 'static' do Django encontra o caminho correto para os arquivos estáticos.
+{% endcomment %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'qrcodeinit/css/styles.css' %}">
+{% endblock style %}
+
+{% block title %}Gerador de Relatório CSV{% endblock title %}
+
+<body>
+  <header>
+    <div class="header-container">
+      {% block header %}Gerador de CSV - Dominus Química{% endblock header %}
+    </div>
+  </header>
+
+  <main>
+    {% block content %}
+    <section class="form-section">
+      {% comment %}
+      Aqui incluímos o conteúdo do formulário que está em outro arquivo.
+      Isso ajuda a manter o código organizado.
+      {% endcomment %}
+      {% include "csvsequencial/partials/csvsequencial_main.html" %}
+    </section>
+    {% endblock content %}
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Dominus Química • Arbomonitor</p>
+  </footer>
+</body>
+
+</html>

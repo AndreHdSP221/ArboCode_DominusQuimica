@@ -1,3 +1,5 @@
+# arbocode/settings.py
+
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -16,6 +18,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'qrCodeInit.apps.qrCodeInitConfig',
+    'csvsequencial.apps.CsvsequencialConfig',
 ]
 
 MIDDLEWARE = [
@@ -77,6 +80,18 @@ USE_I18N = True
 
 USE_TZ = True
 
+
+# --- CONFIGURAÇÃO DE ARQUIVOS ESTÁTICOS ---
+
 STATIC_URL = 'static/'
+
+# 👇 AQUI ESTÁ A CORREÇÃO FINAL E DEFINITIVA 👇
+# Apontando para o diretório exato que contém sua pasta 'global' de estáticos.
+STATICFILES_DIRS = [
+    BASE_DIR / 'base_Templates/global/static',
+]
+
+# --- FIM DA CONFIGURAÇÃO DE ARQUIVOS ESTÁTICOS ---
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
